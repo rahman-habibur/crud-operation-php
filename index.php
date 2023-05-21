@@ -1,4 +1,17 @@
 <?php $title="crud-operation" ?>
+
+<?php
+    include("classes/User.php");
+    $u1 = new User();
+
+
+    if(isset($_POST['add_user'])){
+        // print_r($_POST);
+        $data = $_POST;
+        $u1->add_user($data);
+    }
+?>
+
 <!doctype html>
 <html lang="en">
   <head>
@@ -21,16 +34,16 @@
         <div class="row">
             <div class="col-lg-4">
                 <!-- form-start -->
-                <form action="" method="" class="shadow p-4">
+                <form action="" method="POST" class="shadow p-4">
                     <h3 class="text-danger display-5 text-center mb-3">User Input</h3>
                     <div class="form-group mb-3">
-                        <input type="text" name="" id="" placeholder="Enter your name" class="form-control">
+                        <input type="text" name="name" id="" placeholder="Enter your name" class="form-control">
                     </div>
                     <div class="form-group mb-3">
-                        <input type="email" name="" id="" placeholder="Enter your email" class="form-control">
+                        <input type="email" name="email" id="" placeholder="Enter your email" class="form-control">
                     </div>
                     <div class="form-group mb-4">
-                        <input type="password" name="" id="" placeholder="Enter your password" class="form-control">
+                        <input type="password" name="password" id="" placeholder="Enter your password" class="form-control">
                     </div>
                     <div class="form-group mb-3">
                         <input type="submit" name="add_user" value="Add User" id="" class="btn btn-primary w-100">
